@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>asincronismo</title>
+
+  <script type="text/javascript">
+
+    /*
+    Realiza un programa donde la primera función declarada sea la última en imprimirse, 
+    la segunda función la primera y la tercera se imprima después de la segunda 
+    */
+
+    const myCallbackFirst = () => console.log("Primera función!");
+    const myCallbackSecond = () => console.log("Segunda función!");
+    const myCallbackThird = () => console.log("Tercera función!");
+    setTimeout(myCallbackFirst, 10);
+    setTimeout(myCallbackSecond, 0);
+    setTimeout(myCallbackThird, 5);
+
+
+  </script>
+</head>
+
+<body>
+  <p>Esta página contiene el el uso de asincronismo</p>
+</body>
+
+</html>

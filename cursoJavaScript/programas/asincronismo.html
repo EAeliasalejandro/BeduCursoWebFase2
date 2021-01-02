@@ -1,0 +1,96 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>asincronismo</title>
+
+  <script type="text/javascript">
+
+    //Ejemplo sencillo utilizando un callback:
+
+    setTimeout(function () {
+      console.log("Hola Mundo con retraso!");
+    }, 1000)
+
+    //Si lo prefieres, el callback puede ser asignado a una variable con nombre en lugar de ser anónimo:
+
+    const myCallback = () => console.log("Hola Mundo con retraso!");
+    setTimeout(myCallback, 1000);
+
+    /*
+    setTimeout es una función asíncrona que programa la ejecución de un callback una vez ha transcurrida una determinada cantidad de tiempo (1 segundo en el ejemplo anterior). A tal fin, dispara un timer en un contexto externo y registra el callback para ser ejecutado una vez que el timer termine. En resumen, retrasa una ejecución, como mínimo, la cantidad especificada de tiempo.
+    
+    Es importante comprender que, incluso si configuramos el retraso como 0ms, no significa que el callback vaya a ejecutarse inmediatamente. Atento al siguiente ejemplo:
+    */
+
+    setTimeout(function () {
+      console.log("Esto debería aparecer primero");
+    }, 0);
+    console.log("Sorpresa!");
+    // Sorpresa!
+    // Esto debería aparecer primero
+
+
+
+
+
+
+    //Promesas
+
+    /*A resumidas cuentas, una promesa es un objeto al que le adjuntamos callbacks,
+    en lugar de pasarlos directamente a la función asíncrona. 
+    
+    Las promesas son muy útiles para envolver antiguas APIs asíncronas que funcionan a través de 
+    callbacks puros. De esta forma podemos hacerlas funcionar via promesas:
+     */
+    const delay = time => new Promise(resolveCallback => setTimeout(resolveCallback, time));
+
+    delay(3000)
+      .then(() => console.log(`Este es un retardo de al menos 3 segundos`))
+      .catch(() => console.log(`Retardo fallido`));
+
+    // LLamada asíncrona con callback puro.
+    setTimeout(() => console.log("1"), 0);
+
+    // LLamada asíncrona con promesa.
+    Promise.resolve().then(() => console.log("2"));
+
+    // 2
+    // 1
+
+
+
+
+
+
+    /*
+    La etiqueta async declara una función como asíncrona e indica que una promesa será automáticamente 
+    devuelta. 
+    Podemos declarar como async tanto funciones con nombre, anónimas, o funciones flecha. 
+    Por otro lado, await debe ser usado siempre dentro de una función declarada como async y esperará 
+    automáticamente(de forma asíncrona y no bloqueante) a que una promesa se resuelva.
+    Observa el siguiente ejemplo:
+    */
+
+    async function regresarSaludo() {
+      return "Me gusta JS";
+    }
+    async function otraFuncion() {
+      let saludo = await regresarSaludo();
+      // Este código no se ejecuta hasta que la promesa
+      // de arriba se resuelve ;)
+      console.log("El saludo es: ", saludo);
+    }
+    otraFuncion();
+
+
+
+  </script>
+</head>
+
+<body>
+  <p>Esta página contiene el el uso de asincronismo</p>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>asincronismo</title>
+
+  <script type="text/javascript">
+    /*Reto 3*/
+    function resolverUnSegundo() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve('A');
+        }, 1000);
+      });
+    }
+
+    function resolverDosSegundos() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve('B');
+        }, 2000);
+      });
+    }
+
+    function resolverTresSegundos() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve('C');
+        }, 3000);
+      });
+    }
+
+
+    async function asyncCallPrimero() {
+      console.log('Primero');
+      const result = await resolverTresSegundos();
+      console.log(result);
+    }
+
+    async function asyncCallSegundo() {
+      console.log('Segundo');
+      const result = await resolverUnSegundo();
+      console.log(result);
+    }
+
+    async function asyncCallTercero() {
+      console.log('Tercero');
+      const result = await resolverDosSegundos();
+      console.log(result);
+    }
+
+    //No importar el orden de llamada la impresión siempre será A,B ,C
+    asyncCallPrimero();
+    asyncCallSegundo();
+    asyncCallTercero();
+    //
+    asyncCallTercero();
+    asyncCallSegundo();
+    asyncCallPrimero();
+    //
+    asyncCallSegundo();
+    asyncCallPrimero();
+    asyncCallTercero();
+
+
+
+
+
+
+  </script>
+</head>
+
+<body>
+  <p>Esta página contiene el el uso de asincronismo</p>
+</body>
+
+</html>

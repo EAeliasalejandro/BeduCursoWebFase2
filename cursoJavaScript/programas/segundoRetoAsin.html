@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>asincronismo</title>
+
+  <script type="text/javascript">
+
+    //Promesas
+
+    /*
+    
+    Resuelve el primer reto haciendo uso de promesas 
+    
+     */
+
+    const delay = time => new Promise(resolveCallback => setTimeout(resolveCallback, time));
+
+    let primerValor = "Primer Valor"
+    let segundoValor = "Segundo Valor"
+    let tercerValor = "tercer Valor"
+
+    delay(1000)
+      .then(() => console.log(segundoValor))
+      .then(() => console.log(tercerValor))
+      .then(() => console.log(primerValor))
+      .catch(() => console.log(`Retardo fallido`));
+
+  </script>
+</head>
+
+<body>
+  <p>Esta página contiene el el uso de asincronismo</p>
+</body>
+
+</html>

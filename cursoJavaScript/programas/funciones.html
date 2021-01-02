@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Funciones</title>
+
+  <script type="text/javascript">
+
+    //Declaración de la funcion que calcula el cuadrado de un número
+    function square(number) {
+      return number * number;
+    }
+
+    //Llamado de una función square
+    square(5);
+
+    //La sentencia anterior llama a la función con el argumento 5. La función ejecuta sus sentencias y retorna el valor 25.
+
+    //Para imprimir el llamado de la función usaremos el metodo console.log
+    console.log(square(10));
+
+    //Declaración de la funcion que regresa un saludo
+    function saludo(nombre) {
+      return console.log("Hola : " + nombre);
+    }
+
+    //Llamado de una función saludo
+    nombre = "Juan"
+    saludo(nombre);
+    //La sentencia anterior llama a la función saludo con la variables nombre
+
+    //Creación de una función anomima e invocación de la misma
+    var hola = function () { console.log("Hola Mundo Anonima") };
+    hola();
+
+  </script>
+</head>
+
+<body>
+  <p>Esta página contiene el el uso de funciones</p>
+</body>
+
+</html>
