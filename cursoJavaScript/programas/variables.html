@@ -1,0 +1,70 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Variables</title>
+
+  <script type="text/javascript">
+
+
+    //Tipos de datos Primitivos:
+
+    //Boolean: Es un tipo de dato lógico que solo puede tener los valores true (verdadero) y false(false).
+
+
+    let logica = false; // variable es ahora un Boolean o lógica
+    let logica2 = true; // variable es ahora un Boolean o lógica
+
+
+    //Null: Representa una referencia que apunta a una inexistencia, ya que si a una variable le asignamos el valor 0 la variable si contendría un valor realmente a diferencia de Null
+
+    let nula = null; // variable es ahora un null
+    let noNula = 0; // variable es ahora un Number 
+
+    //Undefined: Es un valor asignado a una variable que fue declarada pero no se le fue asignado ningún valor: por ejemplo:
+
+    let indefinida // variable es ahora un Undefined
+    let indefinida2 // variable es ahora un Undefined
+
+    //Number: Es un tipo de dato numérico de tipo flotante de 64bits, por lo cual puede contener números con punto decimal. En otros lenguajes de programación pueden existir distintos tipos numéricos, por ejemplo: integers (solo pueden contener enteros), floats, doubles, entre otros.
+
+    let numerica = 66; // variable es ahora un Number
+    let numericaConPunto = 66.6; // variable es ahora un Number
+
+    //String: En cualquier lenguaje de programación, un string es una secuencia de caracteres usado para representar un texto.
+
+    let texto = "Hola Mundo"; // variable es ahora un String
+    let texto2 = "A"; // variable es ahora un String
+
+    //Symbol(Disponible desde ECMAScript 6): Es un tipo de dato en cuyos casos son únicos e inmutables. En algunos lenguajes de programación son también llamados atoms
+
+    let simbolo = Symbol("Hola Mundo"); // variable es ahora un Symbol
+    let simbolo2 = Symbol("Otro Hola mundo"); // variable es ahora un Symbol
+
+    //Tipos de datos Object: 
+    //Object: Hace referencia a una estructura de datos que contiene tanto datos o instrucciones. Algunas veces los Objects se refieren a cosas del mundo real, por ejemplo: un object de un coche pueden contener tantos elementos sean necesarios para representarlo.
+
+    let coche = [
+      {
+        marca: "Toyota", color: "rojo", modelo: "corolla"
+      }
+    ]; // variable que contiene un objeto carro
+
+
+    //Modifica este archivo el valor que va entre parentesis en log() para visualizar en el inspector de Chrome el tipo de dato en consola, por ejemplo console.log(simbolo);.
+    //Puedes de igual manera replicar la linea console.log() para mandar más de una variable.
+    console.log(coche)
+    console.log(logica)
+    console.log(nula)
+    console.log(texto2)
+    console.log(simbolo)
+
+  </script>
+</head>
+
+<body>
+  <p>Esta página contiene el el uso de variables</p>
+</body>
+
+</html>
