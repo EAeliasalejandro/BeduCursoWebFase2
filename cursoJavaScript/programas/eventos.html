@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        <script src="eventos.js" language="javascript" type="text/javascript"></script>-->
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="dataList">
+            <div id="clicked"></div>
+        </div>
+    </div>
+    <button id="enviar">Nuevo Dato</button>
+
+    <script>
+        const body = document.querySelector('body');
+        const container = document.querySelector('#container');
+        const button = document.querySelector('#enviar');
+        body.addEventListener('click', function (event) {
+            console.log('contenedor pulsado');
+        });
+        container.addEventListener('click', function (event) {
+            console.log('body pulsado');
+        });
+        button.addEventListener('click', function (event) {
+            console.log('Boton enviado');
+        });
+    </script>
+
+</body>
+
+</html>
