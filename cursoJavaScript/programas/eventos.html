@@ -10,28 +10,20 @@
 </head>
 
 <body>
-    <div id="container">
-        <div id="dataList">
+    <div id="container" style="display: flex; flex-direction: column; justify-content: center;">
+        <div id="dataList" style="width: 10%; ">
             <div id="clicked"></div>
+            <input id="noUno" type="number" value="0" style="margin: 2px;">
+            <input id="noDos" type="number" value="0" style="margin: 2px;">
+            <button id="enviar" style="margin: 2px;">Nuevo Dato</button>
+            <p id="resultado">0</p>
         </div>
     </div>
-    <button id="enviar">Nuevo Dato</button>
 
-    <script>
-        const body = document.querySelector('body');
-        const container = document.querySelector('#container');
-        const button = document.querySelector('#enviar');
-        body.addEventListener('click', function (event) {
-            console.log('contenedor pulsado');
-        });
-        container.addEventListener('click', function (event) {
-            console.log('body pulsado');
-        });
-        button.addEventListener('click', function (event) {
-            console.log('Boton enviado');
-        });
-    </script>
 
+
+    <!--JavaScript-->
+    <script type="text/javascript" src="eventos.js"></script>
 </body>
 
 </html>
