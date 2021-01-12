@@ -1,25 +1,22 @@
 
-// Numbers
-console.log(typeof 10);	// "number"
-console.log(typeof 12.5);	// "number"
-console.log(typeof 2.5e+6);	// "number"
-console.log(typeof Infinity);	// "number"
-console.log(typeof NaN);	// "number"
+var a = 5;
+var b = 10;
+var c = 15;
+var resultado = 0;
 
-// Strings
-console.log(typeof ' ');	// "string" - Espacios en blanco cuentan como caracteres
-console.log(typeof 'Hello World');	// "string"
-console.log(typeof '12');	// "string" - Números dentro de comillas son strings
+let resultado1 = (3 + b) * c / a * 2;
+console.log("Resultado 1: "+resultado1);
+let resultado2 = ((a + b * c) / 5) * 2;
+console.log("Resultado 2: "+resultado2);
+let resultado3 = b / a + 2 * c;
+console.log("Resultado 3: "+resultado3);
+let resultado4 = (a + b + c / c) * a;
+console.log("Resultado 4: "+resultado4);
+let resultado5 = ((3 * a) / c) + a + b + c;
+console.log("Resultado 5: "+resultado5);
+let resultado6 = a - (b + c) * a / 1;
+console.log("Resultado 6: "+resultado6);
 
-// Booleans
-console.log(typeof true);	// "boolean"
-console.log(typeof false);	// "boolean"
+resultado = resultado2 + resultado3 + resultado4 + resultado5 + resultado6 + resultado1;
 
-// Undefined
-console.log(typeof undefined);	// "undefined"
-
-var name;
-console.log(typeof name); // "undefined" - Aún no se asigna un valor
-
-// Null
-console.log(typeof Null);	// "object"
+console.log("La sumatoria de los resultados es: " + resultado);
