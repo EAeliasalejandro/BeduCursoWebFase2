@@ -12,7 +12,8 @@ var input = [1, 3, 4, 7, 2, 1, 9, 0];
 var output = multiplyByTwo(input);
 
 console.log(input); // [1, 3, 4, 7, 2, 1, 9, 0]
-console.log(output);  // [2, 6, 8, 14, 4, 2, 18, 0]*/
+console.log(output);  // [2, 6, 8, 14, 4, 2, 18, 0]
+*/
 
 //Sacar el promedio de un arreglo
 /*function calculateAverage(numbers) {
@@ -21,11 +22,13 @@ console.log(output);  // [2, 6, 8, 14, 4, 2, 18, 0]*/
     for (let i = 0; i < numbers.length; i++) {
         sumaCal += numbers[i];
     }
+    numbers.forEach(element => {
+        sumaCal+=element;
+    });
     promedio = sumaCal / numbers.length;
-    return promedio;
+    return promedio.toFixed(2);
 }
-
-var numbers = [10, 8, 7, 9, 10];
+var numbers = [10, 8, 7, 9, 10,10];
 console.log("El promedio es: " + calculateAverage(numbers));*/
 
 //Funcion para crear un arreglo apartir de un objeto
@@ -61,9 +64,7 @@ function objAarr(car) {
         propiedad = car[i][0];
         valor = car[i][1];
         obj[propiedad] = valor;//como no existe la crea, si existiera la propiedad entonces la cambia y setea
-        
     }
-
     return obj;
 }
 var Car = objAarr(car);//ya objeto
@@ -82,7 +83,7 @@ console.log(Car);*/
 }*/
 
 //Mandar a pedir todos los valores de un array de objetos dependiendo de la propiedad
-/*var singers = [
+var singers = [
     { name: 'Steven Tyler', band: 'Aerosmith', born: 1948 },
     { name: 'Karen Carpenter', band: 'The Carpenters', born: 1950 },
     { name: 'Kurt Cobain', band: 'Nirvana', born: 1967 },
@@ -97,7 +98,6 @@ function pluck(list, propertyName) {
     }
     return resultado;
 }
-// ["Steven Tyler", "Karen Carpenter", "Kurt Cobain", "Chris Cornell"]
 
 console.log(pluck(singers, 'name'));
 // ["Steven Tyler", "Karen Carpenter", "Kurt Cobain", "Chris Cornell"]
@@ -106,4 +106,4 @@ console.log(pluck(singers, 'band'));
 // ["Aerosmith", "The Carpenters", "Nirvana", "Soundgarden"]
 
 console.log(pluck(singers, 'born'));
-  // [1948, 1950, 1967, 1964]*/
+  // [1948, 1950, 1967, 1964]
