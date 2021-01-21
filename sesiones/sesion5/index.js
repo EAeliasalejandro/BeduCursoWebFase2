@@ -4,10 +4,9 @@
     this.birthYear = birthYear;
     this.job = job;
 }
-var john = new Person('John', 1990, 'Developer');
+var john = new Person('John', 1998, 'Developer');
 var mark = new Person('Mark', 1985, 'Teacher');
-var jane = new Person('Jane', 1975, 'Designer');
-*/
+var jane = new Person('Jane', 1975, 'Designer');*/
 
 //reto1 usar prototype
 /*var Vec = function (x, y) { //Vector de dos dimensiones
@@ -56,8 +55,8 @@ console.log(john);*/
 }
 Group.from = function (arr) {
     var nuevoObj = new Group();
-    arr.map(function (elemento) {
-        nuevoObj.members.push(elemento);
+    arr.forEach(element => {
+        nuevoObj.members.push(element);
     });
     return nuevoObj;
     ;
@@ -69,7 +68,6 @@ Group.prototype.has = function (num) {
     });
     return arrBool;
 }
-
 Group.prototype.add = function (num) {
     this.members.push(num);
 }
@@ -102,6 +100,7 @@ john.calculateAge();
 mark.calculateAge();
 jane.calculateAge();*/
 
+//Reto 3
 var Triangle = function (a, b, c) {
     this.a = a;
     this.b = b;
@@ -114,5 +113,7 @@ Triangle.prototype.getPerimeter = function () {
 
 var triangle = new Triangle(1, 2, 3);
 
-console.log(triangle); // Triangle { a: 1, b: 2, c: 3 }
-console.log(triangle.getPerimeter()); // 6
+console.log(triangle); 
+// Triangle { a: 1, b: 2, c: 3 }
+console.log(triangle.getPerimeter()); 
+// 6
