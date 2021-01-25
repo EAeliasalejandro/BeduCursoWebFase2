@@ -41,11 +41,45 @@ function sumDigits(number) {
 console.log(sumDigits(12345)); // 15*/
 
 //Reto 1
-function flatten(arrays) {
-    var arreglo = arrays.toString().split(',').map(Number);
-    return arreglo;
+/*function flatten(arrays) {
+    return = arrays.toString().split(',').map(Number);
 }
 
 var arrays = [[1, 2, 3], [4, 5], [6]];
 var array = flatten(arrays);
-console.log(array); // [1, 2, 3, 4, 5, 6]
+console.log(array); // [1, 2, 3, 4, 5, 6]*/
+
+//Reto 2
+/* function compact(array) {
+    return array.filter(function (elemento) {
+        return elemento != false;
+    });
+}
+
+var array = [0, 1, false, 2, '', 3];
+var compactedArray = compact(array);
+
+console.log(compactedArray); // [1, 2, 3] */
+
+//Reto3
+function loop(start, test, update, body) {
+    var startAct;
+    if (test(start)) {
+        body(start);
+        startAct = update(start);
+        loop(startAct, test, update, body);
+    }
+}
+
+var test = function (n) {
+    return n > 0;
+}
+
+var update = function (n) {
+    return n - 1;
+}
+
+loop(3, test, update, console.log);
+  // 3
+  // 2
+  // 1
